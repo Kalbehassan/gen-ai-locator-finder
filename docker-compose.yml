@@ -1,0 +1,23 @@
+services:
+  locator-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      APP_ENV: local
+      LOCATOR_HEADLESS: "true"
+      LOCATOR_DEFAULT_PROVIDER: mock
+      LOCATOR_VECTOR_STORE: chroma
+      LOCATOR_CHROMA_DIR: /data/chroma
+      LOCATOR_REPORTS_DIR: /data/reports
+    volumes:
+      - locator-data:/data
+    restart: unless-stopped
+
+volumes:
+  locator-data:

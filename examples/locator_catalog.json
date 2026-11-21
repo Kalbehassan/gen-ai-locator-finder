@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "status": "example-only",
+  "credentials": null,
+  "strategies": [
+    {"strategy": "test_id", "value": "save-button", "stability": 0.95, "notes": "Synthetic fixture identifier"},
+    {"strategy": "role", "value": "button[name='Save']", "stability": 0.89, "notes": "Visible label plus role"},
+    {"strategy": "accessible_label", "value": "Save changes", "stability": 0.90, "notes": "Accessible name"},
+    {"strategy": "text", "value": "Save", "stability": 0.70, "notes": "May become ambiguous"},
+    {"strategy": "xpath", "value": "//button[contains(., 'Save')]", "stability": 0.58, "notes": "Fallback only"}
+  ],
+  "privacy": [
+    "No real application URL",
+    "No username or password",
+    "No API key or session cookie",
+    "Screenshots are opt-in and masked"
+  ]
+}
